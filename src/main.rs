@@ -29,11 +29,12 @@ fn main(){
             .send();
 
         let request = match request {
-            Some(value)=> value,
+            Ok(value)=> value,
             Err(err) => panic!("Error with request body, coulnd't read from body:  {}", err)
             
         };
-        print!("{:?}", request);
+
+        print!("{:?}", request.text().expect("Couldn't print body"));
     }
 
     }
