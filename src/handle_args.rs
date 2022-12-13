@@ -23,8 +23,9 @@ impl FindFunctions for Vec<String> {
     fn get_index(&self, needle: String) -> usize {
         let mut i: usize = 0;
 
+        //Find index
         loop {
-            if i > self.len() {
+            if i == self.len() {
                 return 0;
             }
             if self[i] == needle {

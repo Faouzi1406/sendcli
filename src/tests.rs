@@ -4,6 +4,7 @@ pub mod tests{
     use crate::handle_path_type::PathType;
     use crate::handle_path_type::FileTypeTrait;
 
+    //Testing file type Alias = PathType;
     #[test]
     fn  test_file_type() {
         //Testing file types path
