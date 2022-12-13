@@ -5,7 +5,6 @@ mod handle_args;
 use clap::Parser;
 use crate::{handle_args::{HandleArgs, ArgumentsFunctions}, handle_path_type::{FileTypeTrait, PathType}};
 
-
 #[derive(Parser,Debug)]
 #[command(about)]
 pub struct Args {
@@ -14,7 +13,6 @@ pub struct Args {
     
     pub args:Vec<String>,
 }
-
 
 fn request_to_string(response:Result<reqwest::blocking::Response, reqwest::Error>)->String{
     let request = match response {
@@ -53,10 +51,8 @@ fn make_request(type_request:&'static str, has_body:bool, args:Args){
         let request_string = request_to_string(request);
 
         print!("Response: {:?}", request_string);
-        
         }
     }
-
 
      else if type_request == "get" {
         let client = reqwest::blocking::Client::new();
@@ -135,9 +131,5 @@ fn main(){
             print!("{}", args.read());
         }
 
-        if(){
-        }
     }
-
-
 }
